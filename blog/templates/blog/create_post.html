@@ -4,7 +4,7 @@
 {% block content %}
     <h1>Write a blog post ...</h1>
     
-    <form>
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         
         {{ form | as_bootstrap }}
