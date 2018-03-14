@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+{% load bootstrap_tags %}
+
+{% block content %}
+    <h1>Write a blog post ...</h1>
+    
+    <form>
+        {% csrf_token %}
+        
+        {{ form | as_bootstrap }}
+        
+        <input type="submit" value="Save"/>
+    </form>
+    
+{% endblock content %}
