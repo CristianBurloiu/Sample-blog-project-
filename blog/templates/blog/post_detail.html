@@ -2,7 +2,10 @@
 
 {% block content %}
     <h1>{{ post.title }}</h1>
-     <img src="{{ MEDIA_URL }}{{post.image}}"/>
-    <p>{{ post.content }}</p>
+    {% if post.image %}
+        <img src="{{ MEDIA_URL }}{{post.image}}"/>
+    {% endif %}
+    <p>{{ post.content|linebreaksbr }}</p>
     <button class="btn btn-default" onclick="location.href='{% url 'post_list' %}'">Back To Blog</button>
+    <button class="btn btn-default" onclick="location.href='{% url 'edit_post' post.id %}'">Edit Post</button>
 {% endblock content %}
